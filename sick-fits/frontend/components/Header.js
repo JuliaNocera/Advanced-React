@@ -1,8 +1,25 @@
 import React from 'react'
 import Link from 'next/link'
+import Router from 'next/router'
+import NProgress from 'nprogress'
 import styled from 'styled-components'
 
 import Nav from './Nav'
+
+// Since we are using the Link component from next, 
+// (actually do you need Link for this, not sure?)
+// we can use Router to add listeners to route changes
+Router.onRouteChangeStart = () => {
+  // the external css for the red status bar when 
+  // calling this function is linked in the Meta component
+  NProgress.start()
+}
+Router.onRouteChangeComplete = () => {
+  NProgress.done()
+}
+Router.onRouteChangeError = () => {
+  NProgress.done()
+}
 
 const Logo = styled.h1`
   font-size: 4rem;
@@ -42,6 +59,7 @@ const StyledHeader = styled.header`
     border-bottom: 1px solid ${props => props.theme.lightgrey};
   }
 `
+
 
 const Header = () => (
   <StyledHeader>

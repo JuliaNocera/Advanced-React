@@ -14,7 +14,6 @@ const theme = {
   bs: '0 12px 24px 0 rgba(0,0,0,0.09)'  // box-shadow 
 }
 
-
 /* Since we likely won't need to reuse these styled components, we'll leave them here in this file --> but that is def a pref  */
 const StyledPage = styled.div`
   background: white;
@@ -26,6 +25,44 @@ const Inner = styled.div`
   max-width: ${(props) => props.theme.maxWidth};
   margin: 0 auto;
   padding: 2rem;
+`
+
+/* 
+  Note: we don't have access to the props.theme in here since it is not within the ThemeProvider component
+  But we have the theme here in this file, we could also export it from a different file and use it like a regular JS object, 
+  which it is 
+ */
+injectGlobal`
+  @font-face {
+    font-family: 'radnika_next';
+    src: url('/static/radnikanext-medium-webfont.woff2')
+    format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  html {
+    box-sizing: border-box;
+    font-size: 10px;
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  body {
+    padding: 0;
+    margin: 0;
+    /* 
+      rem is calculated based on the global font-size - 
+      in this case we set it explicitly on html, 
+      otherwise it will operate off the default font-size which is often 16px 
+    */
+    line-height: 2;
+    font-size: 1.5rem; 
+    font-family: 'radnika_next';
+  }
+  a {
+    text-decoration: none;
+    color: ${theme.black}
+  }
 `
 
 /*

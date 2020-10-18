@@ -29,6 +29,10 @@ const NavStyles = styled.ul`
       height: 100%;
       left: 0;
       position: absolute;
+      /* 
+        this skew here is what slants the lines! Pretty cool! 
+        skew rotates it from the center and makes sure it stretches to hit the top and bottom 
+      */
       transform: skew(-20deg);
       top: 0;
       bottom: 0;
