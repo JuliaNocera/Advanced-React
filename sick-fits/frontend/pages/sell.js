@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 /*
   Creating a file in this 'pages' folder creates a linked view 
@@ -8,7 +9,11 @@ import React from 'react'
 */
 
 const Sell = () => {
-  return <div>Sell</div>
+  return (
+    <div>
+      <h4>Sell</h4>
+    </div>
+  )
 }
 
 export default Sell
