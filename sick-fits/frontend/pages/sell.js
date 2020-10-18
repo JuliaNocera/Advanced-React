@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 
 /*
   Creating a file in this 'pages' folder creates a linked view 

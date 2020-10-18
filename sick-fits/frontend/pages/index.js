@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 
 /* 
   Using Link from next.js gives us a way to navigate
@@ -9,9 +8,7 @@ import Link from 'next/link'
 
 const Home = () => {
   return (
-    <>
-      <h4>Home</h4>
-    </>
+    <h4>Home</h4>
   )
 }
 
