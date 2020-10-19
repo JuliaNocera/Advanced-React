@@ -1,11 +1,23 @@
-type Dog {
-  name: String!
-}
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# This is the graphql file where we define our PUBLIC FACING API  #
+# --> ie. what the service will serve to the client               #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+
+# import * from './generated/prisma.graphql'
 
 type Mutation {
-  createDog(name: String!): Dog
+  createItem(title: String, description: String, price: Int, image: String, largeImage: String): Item!
 }
 
 type Query {
-  dogs: [Dog]!
+  items: [Item]!
 }
+
+# TODO: opportunity to refactor to an input objet in createItem
+
+# NOTES
+
+# IMPORTING TYPES FROM OTHER PLACES
+# to import types from another file, we can use the import statement at the top of this file. 
+# It requires a # symbol in front of it
+

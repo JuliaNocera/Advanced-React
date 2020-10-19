@@ -1,7 +1,9 @@
+
 const Query = {
-  dogs(parent, args, context, info) {
-    global.dogs = global.dogs || []
-    return global.dogs
+  async items(parent, args, context, info) {
+    console.log('items fetchtime')
+    const items = await context.db.query.items()
+    return items
   }
 };
 

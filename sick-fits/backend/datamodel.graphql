@@ -1,6 +1,22 @@
+# This is for Prisma, where we define our graphQL schema 
+# The prisma.graphql file is generated based on this file
+
 type User {
   # the @ indicates a graphql directive 
   id: ID! @id
   name: String!
   email: String!
+}
+
+type Item {
+  id: ID! @id
+  title: String!
+  description: String!
+  image: String
+  largeImage: String
+  price: Int!
+  # DateTime is exposed via Prisma ~ not standard GraphQL type
+  createdAt: DateTime @createdAt
+  updatedAt: DateTime @updatedAt
+  # user: User!
 }
