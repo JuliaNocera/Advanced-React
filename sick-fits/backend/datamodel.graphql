@@ -1,0 +1,6 @@
+type User {
+  # the @ indicates a graphql directive 
+  id: ID! @id
+  name: String!
+  email: String!
+}
