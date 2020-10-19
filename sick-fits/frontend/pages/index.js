@@ -1,14 +1,9 @@
 import React from 'react'
-
-/* 
-  Using Link from next.js gives us a way to navigate
-
-  How do we keep state? A custom App component -- see next.js docs
-*/
+import Items from '../components/Items'
 
 const Home = () => {
   return (
-    <h4>Home</h4>
+    <Items />
   )
 }
 
